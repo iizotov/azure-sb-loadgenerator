@@ -64,7 +64,7 @@ namespace LoadGenerator
                 {
                     utcTimeStamp = ((long)(DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds).ToString();
                     randomPayload = new Bogus.Randomizer().ClampString("", commandLineOptions.MessageSize, commandLineOptions.MessageSize);
-                    payload = String.Format("{{\"dt\":\"{0}\",\"payload\":\"{1}\"}}", utcTimeStamp, randomPayload);
+                    payload = String.Format("{{\"dt\":{0},\"payload\":\"{1}\"}}", utcTimeStamp, randomPayload);
                     message = new BrokeredMessage(new MemoryStream(Encoding.UTF8.GetBytes(payload)))
                     {
                         ContentType = "application/json",
