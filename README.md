@@ -3,7 +3,7 @@ This console app generates random payload and inserts it into an Azure Service B
 ```json
 {"dt":1513815044440,"payload":"<random string as per message size>"}
 ```
-> Note: do not forger to add `TransportType=Amqp` to your connection string to enforce [AMQP 1.0](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-amqp-dotnet) 
+> Note: do not forger to add `;TransportType=Amqp` to your connection string to enforce [AMQP 1.0](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-amqp-dotnet) 
 
 **Software prerequisites:**
 1. Visual Studio 2015 (or higher)
@@ -33,7 +33,23 @@ This console app generates random payload and inserts it into an Azure Service B
 ```
 
 ## Example
+The following command line generates load in batches of 200 messages using 10 parallel threads, each message size is 150+35 bytes. The code will run infitinely until SIGTERM or Ctrl+C is received
 
+```
+.\LoadGenerator.exe --threads 10 --size 150 --messagestosend 0 --connectionstring "Endpoint=sb://latencytest.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=*****;TransportType=Amqp" --name eh1 --checkpoint 100 --batchmode True --batchsize 200
+Thread: 5, started and connected
+Thread: 3, started and connected
+Thread: 6, started and connected
+Thread: 9, started and connected
+Thread: 7, started and connected
+Thread: 8, started and connected
+Thread: 4, started and connected
+Thread: 10, started and connected
+Thread: 7, started and connected
+Thread: 9, started and connected
+Thread: 19, sent: 200 / 0 messages total, in batches of 200, message size: 185 bytes, speed: 121.520333602481 msg/sec
+Thread: 17, sent: 200 / 0 messages total, in batches of 200, message size: 185 bytes, speed: 120.234288534639 msg/sec
+```
 
 ## Disclaimers
 The code included in this sample is not intended to be a set of best practices on how to build scalable enterprise grade applications. This is beyond the scope of this quick start sample.
