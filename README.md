@@ -3,7 +3,7 @@ This console app generates random payload and inserts it into an Azure Service B
 ```json
 {"dt":1513815044440,"payload":"<random string as per message size>"}
 ```
-> Note: do not forger to add `;TransportType=Amqp` to your connection string to enforce [AMQP 1.0](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-amqp-dotnet) 
+> Note: do not forget to add `;TransportType=Amqp` to your connection string to enforce [AMQP 1.0](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-amqp-dotnet) 
 
 **Software prerequisites:**
 1. Visual Studio 2015 (or higher)
@@ -21,7 +21,8 @@ This console app generates random payload and inserts it into an Azure Service B
   -m, --messagestosend      Required. (Default: 100) Messages to send in each
                             thread before termination, 0 for infinity
   -c, --connectionstring    Required. Event Hub or Service Bus Namespace
-                            connection String
+                            connection String. If Event Hub, make sure it is the
+                            Namespace's connection string, not the Event Hub's
   --name                    Event Hub or Queue or Topic Name
   --checkpoint              (Default: 100) Checkpoint - log to console every N
                             messages
