@@ -26,10 +26,10 @@ This console app generates random payload and inserts it into an Azure Service B
   --name                    Event Hub or Queue or Topic Name
   --checkpoint              (Default: 100) Checkpoint - log to console every N
                             messages
-  -b, --batchmode           (Default: True) Checkpoint - log to console every N
-                            messages
-  --batchsize               (Default: 100) Checkpoint - log to console every N
-                            messages
+  -b, --batchmode           (Default: True) Send messages in batches of 
+							--batchsize size
+  --batchsize               (Default: 100) Determines the size of the batch if 
+							using batch mode
 
 ```
 
