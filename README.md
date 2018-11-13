@@ -1,4 +1,4 @@
-# Multi-threaded load Generator for Azure Service Bus and Event Hubs (superseded by a [dotnet core version(https://github.com/iizotov/azure-sb-loadgenerator-dotnetcore))
+# Multi-threaded load Generator for Azure Service Bus and Event Hubs (superseded by a [dotnet core version](https://github.com/iizotov/azure-sb-loadgenerator-dotnetcore))
 
 
 > Note: it's been superseded by a rewritten dotnet core version available [here](https://github.com/iizotov/azure-sb-loadgenerator-dotnetcore)
