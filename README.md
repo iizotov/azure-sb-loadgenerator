@@ -1,4 +1,6 @@
 # Multi-threaded load Generator for Azure Service Bus and Event Hubs 
+> Note: it's been superseded by a rewritten dotnet core version available [here](https://github.com/iizotov/azure-sb-loadgenerator-dotnetcore)
+
 This console app generates random payload and inserts it into an Azure Service Bus Queue or a Topic or an Azure Event Hub. Every payload message is a JSON consistsing of a UTC timestamp and a random string payload:
 ```json
 {"dt":1513815044440,"payload":"<random string as per message size>"}
